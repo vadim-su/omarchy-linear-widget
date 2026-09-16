@@ -98,7 +98,7 @@ If none of those exist, `p` does nothing and the status line says so.
 | p | Open MR/PR in the browser |
 | o | Open Linear issue |
 | r | Refresh |
-| Esc | Close picker, folds, then panel |
+| Esc | Close picker, folds, then panel (closes the panel outright until an account is connected) |
 
 Left click a ticket: Herdr. Right click: Linear. Middle click: MR/PR.
 

@@ -446,8 +446,11 @@ Panel {
       }
       onActivateRequested: root.activateCursor()
       onCloseRequested: {
+        // Without an account the panel opens its own accounts fold and add form,
+        // so collapsing them first would spend an Escape undoing something the
+        // user never opened. Close outright until there is a token.
         if (root.dropdownOpen) root.closePickers()
-        else if (root.accountsOpen || root.filtersOpen || root.addingAccount) root.collapseFolds()
+        else if (linear.configured && (root.accountsOpen || root.filtersOpen || root.addingAccount)) root.collapseFolds()
         else root.close()
       }
       onTabRequested: function(direction) { root.switchPanel(direction) }
